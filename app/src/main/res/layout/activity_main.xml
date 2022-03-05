@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--start toolbar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:elevation="0dp"
+        app:titleTextColor="?attr/colorOnSecondary"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_horizontal"
+                android:layout_marginEnd="16dp"
+                android:thumb="@drawable/thumb"
+                android:tooltipText="@string/nights_mode"
+                app:thumbTint="@color/black"
+                app:track="@drawable/track"
+                tools:targetApi="o" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <!--end toolbar-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="9">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView_expressionTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/expression_mainTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:singleLine="true"
+                android:scrollHorizontally="true"
+                android:textAlignment="viewEnd"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="@dimen/textView_size" />
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/answer_mainTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:singleLine="true"
+            android:textAlignment="viewEnd"
+            android:textSize="@dimen/textView_equal_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/gray_light" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="5"
+            android:weightSum="5"
+            tools:ignore="UselessParent">
+
+            <!--TableRow one start-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!--button one-->
+                <Button
+                    android:id="@+id/ac_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/ac"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/button_text_size_small" />
+
+                <!--button two-->
+                <Button
+                    android:id="@+id/braces_left_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/braces_left"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/button_text_size_small" />
+
+                <!--button tree-->
+                <Button
+                    android:id="@+id/braces_right_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/braces_right"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/button_text_size_small" />
+
+                <!--button four-->
+                <Button
+                    android:id="@+id/division_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/division"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/button_text_size_small" />
+
+            </TableRow>
+
+            <!--TableRow two start-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!--button one-->
+                <Button
+                    android:id="@+id/seven_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/seven"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button two-->
+                <Button
+                    android:id="@+id/eight_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/eight"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button tree-->
+                <Button
+                    android:id="@+id/nine_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/nine"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button four-->
+                <Button
+                    android:id="@+id/total_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/total"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+            </TableRow>
+
+            <!--TableRow tree start-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!--button one-->
+                <Button
+                    android:id="@+id/four_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/four"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button two-->
+                <Button
+                    android:id="@+id/five_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/five"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button tree-->
+                <Button
+                    android:id="@+id/six_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/six"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button four-->
+                <Button
+                    android:id="@+id/minus_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/mines"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+            </TableRow>
+
+            <!--TableRow four start-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!--button one-->
+                <Button
+                    android:id="@+id/one_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/one"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button two-->
+                <Button
+                    android:id="@+id/two_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/two"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button tree-->
+                <Button
+                    android:id="@+id/tree_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/tree"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button four-->
+                <Button
+                    android:id="@+id/multiplication_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/multiplication"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+            </TableRow>
+
+            <!--TableRow five start-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!--button one-->
+                <Button
+                    android:id="@+id/clear_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/c"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/button_text_size_small" />
+
+                <!--button two-->
+                <Button
+                    android:id="@+id/zero_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/zero"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button tree-->
+                <Button
+                    android:id="@+id/dot_mainBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/dot"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="@dimen/button_text_size_big" />
+
+                <!--button four-->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/equal_mainBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_equal_button"
+                        android:gravity="center"
+                        android:text="@string/equal"
+                        android:textColor="?attr/colorOnSecondary"
+                        android:textSize="@dimen/text_size_big" />
+                </FrameLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
